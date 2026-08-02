@@ -1,3 +1,7 @@
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+
+# lefthook needs its postinstall to place the git hook binary.
+onlyBuiltDependencies:
+  - lefthook
