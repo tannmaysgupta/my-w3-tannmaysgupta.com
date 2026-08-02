@@ -1,7 +1,16 @@
 ignoredBuiltDependencies:
-  - sharp
   - unrs-resolver
 
 # lefthook needs its postinstall to place the git hook binary.
+# sharp builds its native bindings.
 onlyBuiltDependencies:
   - lefthook
+  - sharp
+
+# Next 16.2.12 pins postcss 8.4.31 and sharp 0.34.5, both of which carry open
+# advisories (postcss sourceMappingURL path traversal; sharp's inherited libvips
+# CVEs). Neither is reachable in a meaningful way here — all CSS is first-party
+# and the site uses no next/image — but the fixes are drop-in, so take them.
+overrides:
+  postcss: ^8.5.25
+  sharp: ^0.35.0
