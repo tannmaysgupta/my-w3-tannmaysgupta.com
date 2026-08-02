@@ -9,6 +9,6 @@ pre-commit:
 pre-push:
   jobs:
     - name: typecheck
-      run: pnpm exec tsc --noEmit
+      run: pnpm typecheck
     - name: test
       run: pnpm exec vitest run

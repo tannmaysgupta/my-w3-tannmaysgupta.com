@@ -30,8 +30,10 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      # `next typegen` first: PageProps and friends are generated, so a fresh
+      # clone has no route types until either this or a build has run.
       - name: Typecheck
-        run: pnpm exec tsc --noEmit
+        run: pnpm typecheck
 
       - name: Test
         run: pnpm test
