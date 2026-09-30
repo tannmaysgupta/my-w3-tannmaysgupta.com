@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, Plus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { BookingCalendar } from "@/components/portfolio/booking-calendar";
 import { Opening } from "@/components/portfolio/opening";
@@ -168,7 +169,19 @@ export function PortfolioHome() {
                   <span className="experience-years">
                     {last.start.slice(0, 4)} — {first.end?.slice(0, 4) ?? "Now"}
                   </span>
-                  <span className="experience-company">{job.org}</span>
+                  <span className="experience-company">
+                    {job.orgLogo && (
+                      <Image
+                        className="experience-logo"
+                        src={job.orgLogo}
+                        alt=""
+                        width={56}
+                        height={56}
+                        sizes="(max-width: 600px) 40px, 56px"
+                      />
+                    )}
+                    <span>{job.org}</span>
+                  </span>
                   <span className="experience-title">
                     {first.title}
                     {job.roles.length > 1 && <small>Previously {last.title}</small>}
