@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 /**
  * The site is fully static: no API routes, no database, no secrets.
- * The only external integration is Cal.com's booking widget.
+ * Integrations: Cal.com's booking widget and Vercel Web Analytics.
  */
 const isDevelopment = process.env.NODE_ENV === "development";
 const contentSecurityPolicy = [
@@ -14,6 +14,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
+  // Vercel serves the production analytics script and collection routes on this origin.
   "connect-src 'self'",
   "frame-src https://cal.com https://app.cal.com",
   "form-action 'self'",

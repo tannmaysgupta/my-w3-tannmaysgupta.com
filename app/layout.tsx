@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "../styles.css";
 import "../portfolio.css";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           // biome-ignore lint/security/noDangerouslySetInnerHtml: static, build-time JSON-LD
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
         />
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );
