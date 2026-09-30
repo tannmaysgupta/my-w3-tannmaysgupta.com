@@ -19,6 +19,7 @@ export type Role = {
 export type Experience = {
   org: string;
   orgUrl?: string;
+  orgLogo?: string;
   location?: string;
   roles: Role[];
 };

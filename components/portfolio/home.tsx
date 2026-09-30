@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, Plus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { BookingCalendar } from "@/components/portfolio/booking-calendar";
 import { Opening } from "@/components/portfolio/opening";
@@ -8,6 +9,24 @@ import { experience } from "@/lib/content/experience";
 import { contact, profile, socials } from "@/lib/content/profile";
 import { projects } from "@/lib/content/projects";
 import { formatPostDate, getAllPosts } from "@/lib/posts";
+
+const featuredCourses = new Set(["Design Principles: an Introduction", "Data Visualization"]);
+const featuredLearning = certifications
+  .map((group) => ({
+    ...group,
+    items: group.items.filter(
+      (item) => group.issuer === "Insurance Institute of India" || featuredCourses.has(item.name),
+    ),
+  }))
+  .filter((group) => group.items.length > 0);
+const moreLearning = certifications
+  .map((group) => ({
+    ...group,
+    items: group.items.filter(
+      (item) => group.issuer !== "Insurance Institute of India" && !featuredCourses.has(item.name),
+    ),
+  }))
+  .filter((group) => group.items.length > 0);
 
 function ChapterArt({ kind }: { kind: string }) {
   return (
@@ -150,7 +169,21 @@ export function PortfolioHome() {
                   <span className="experience-years">
                     {last.start.slice(0, 4)} — {first.end?.slice(0, 4) ?? "Now"}
                   </span>
-                  <span className="experience-company">{job.org}</span>
+                  <span className="experience-company">
+                    {job.orgLogo && (
+                      <span className="experience-logo-tile">
+                        <Image
+                          className="experience-logo"
+                          src={job.orgLogo}
+                          alt=""
+                          width={56}
+                          height={56}
+                          sizes="(max-width: 600px) 40px, 56px"
+                        />
+                      </span>
+                    )}
+                    <span>{job.org}</span>
+                  </span>
                   <span className="experience-title">
                     {first.title}
                     {job.roles.length > 1 && <small>Previously {last.title}</small>}
@@ -340,8 +373,8 @@ export function PortfolioHome() {
             ))}
           </div>
           <div>
-            <h3 className="micro column-label">Learning the industry</h3>
-            {certifications.slice(0, 2).map((group) => (
+            <h3 className="micro column-label">Industry & design</h3>
+            {featuredLearning.map((group) => (
               <article className="education-item" key={group.issuer}>
                 <h4>{group.issuer}</h4>
                 <ul>
@@ -362,7 +395,7 @@ export function PortfolioHome() {
             <Plus size={20} className="details-plus" aria-hidden="true" />
           </summary>
           <div>
-            {certifications.slice(2).map((group) => (
+            {moreLearning.map((group) => (
               <article key={group.issuer}>
                 <h4>{group.issuer}</h4>
                 {group.items.map((item) => (

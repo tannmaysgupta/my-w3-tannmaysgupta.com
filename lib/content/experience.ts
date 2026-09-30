@@ -11,6 +11,7 @@ import type { Experience } from "./types";
 export const experience: Experience[] = [
   {
     org: "Vaatun",
+    orgLogo: "/logos/experience/vaatun.webp",
     orgUrl: "https://www.vaatun.com",
     location: "India",
     roles: [
@@ -32,6 +33,8 @@ export const experience: Experience[] = [
   },
   {
     org: "PrishaPolicy",
+    orgLogo: "/logos/experience/prishapolicy.webp",
+    orgUrl: "https://prishapolicy.com/",
     location: "Gurugram, Haryana",
     roles: [
       {
@@ -61,6 +64,8 @@ export const experience: Experience[] = [
   },
   {
     org: "Zuddl",
+    orgLogo: "/logos/experience/zuddl.webp",
+    orgUrl: "https://www.zuddl.com/",
     location: "Remote — Hyderabad",
     roles: [
       {
@@ -79,6 +84,8 @@ export const experience: Experience[] = [
   },
   {
     org: "ICICI Lombard",
+    orgLogo: "/logos/experience/icici-lombard.jpg",
+    orgUrl: "https://www.icicilombard.com/",
     location: "Remote — Mumbai",
     roles: [
       {
@@ -97,6 +104,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Outcampus",
+    orgLogo: "/logos/experience/outcampus.webp",
     location: "Remote — Gurgaon",
     roles: [
       {
@@ -112,6 +120,8 @@ export const experience: Experience[] = [
   },
   {
     org: "Zomato",
+    orgLogo: "/logos/experience/zomato.webp",
+    orgUrl: "https://www.zomato.com/",
     location: "Gurgaon",
     roles: [
       {
@@ -128,6 +138,8 @@ export const experience: Experience[] = [
   },
   {
     org: "Amazon India",
+    orgLogo: "/logos/experience/alexa.webp",
+    orgUrl: "https://developer.amazon.com/en-IN/alexa/alexa-student-influencer",
     roles: [
       {
         title: "Alexa Student Influencer",
@@ -141,6 +153,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Student Technical Community, VIT",
+    orgLogo: "/logos/experience/stc-vit.webp",
     location: "Vellore",
     roles: [
       {

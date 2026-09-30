@@ -896,9 +896,27 @@ a:hover > .external-arrow {
   opacity: 0.75;
 }
 .experience-company {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
   font-size: clamp(20px, 2.6vw, 34px);
   letter-spacing: -0.04em;
   line-height: 1.2;
+}
+.experience-logo-tile {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.experience-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .experience-title {
   font-size: 13px;
@@ -1409,9 +1427,7 @@ details[open] > summary .details-plus {
 }
 .booking-widget {
   min-height: 600px;
-  background: var(--portfolio-paper);
-  border: 1px solid #243d3340;
-  padding: clamp(8px, 2vw, 28px);
+  background: #a8cbb6;
   color: var(--portfolio-green);
 }
 .booking-placeholder {
@@ -1920,6 +1936,11 @@ details[open] > summary .details-plus {
   }
   .experience-company {
     font-size: 23px;
+    gap: 10px;
+  }
+  .experience-logo-tile {
+    width: 40px;
+    height: 40px;
   }
   .experience-title {
     font-size: 11px;
