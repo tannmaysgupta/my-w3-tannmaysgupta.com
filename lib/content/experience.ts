@@ -32,6 +32,7 @@ export const experience: Experience[] = [
   },
   {
     org: "PrishaPolicy",
+    orgUrl: "https://prishapolicy.com/",
     location: "Gurugram, Haryana",
     roles: [
       {
@@ -61,6 +62,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Zuddl",
+    orgUrl: "https://www.zuddl.com/",
     location: "Remote — Hyderabad",
     roles: [
       {
@@ -79,6 +81,7 @@ export const experience: Experience[] = [
   },
   {
     org: "ICICI Lombard",
+    orgUrl: "https://www.icicilombard.com/",
     location: "Remote — Mumbai",
     roles: [
       {
@@ -112,6 +115,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Zomato",
+    orgUrl: "https://www.zomato.com/",
     location: "Gurgaon",
     roles: [
       {
@@ -128,6 +132,7 @@ export const experience: Experience[] = [
   },
   {
     org: "Amazon India",
+    orgUrl: "https://developer.amazon.com/en-IN/alexa/alexa-student-influencer",
     roles: [
       {
         title: "Alexa Student Influencer",

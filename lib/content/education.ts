@@ -29,14 +29,14 @@ export const certifications: CertificationGroup[] = [
   {
     issuer: "Insurance Institute of India",
     items: [
-      { name: "Licentiate", meta: "IC-01 Principles of Insurance" },
-      { name: "Licentiate", meta: "IC-02 Practice of Life Insurance" },
-      { name: "Licentiate", meta: "IC-11 Practice of General Insurance" },
       {
-        name: "Associateship paper",
-        meta: "IC-57 Fire and Consequential Loss Insurance",
+        name: "Licentiate",
+        meta: "IC-01 Principles of Insurance · IC-02 Practice of Life Insurance · IC-11 Practice of General Insurance",
       },
-      { name: "Associateship paper", meta: "IC-86 Risk Management" },
+      {
+        name: "Associateship papers",
+        meta: "IC-57 Fire and Consequential Loss Insurance · IC-86 Risk Management",
+      },
     ],
   },
   {
