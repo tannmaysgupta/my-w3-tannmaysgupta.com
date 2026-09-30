@@ -171,9 +171,7 @@ export function PortfolioHome() {
                   </span>
                   <span className="experience-company">
                     {job.orgLogo && (
-                      <span
-                        className={`experience-logo-tile${job.org === "ICICI Lombard" ? " experience-logo-icici" : ""}`}
-                      >
+                      <span className="experience-logo-tile">
                         <Image
                           className="experience-logo"
                           src={job.orgLogo}

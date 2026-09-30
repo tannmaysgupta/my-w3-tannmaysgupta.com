@@ -84,7 +84,7 @@ export const experience: Experience[] = [
   },
   {
     org: "ICICI Lombard",
-    orgLogo: "/logos/experience/icici-lombard.webp",
+    orgLogo: "/logos/experience/icici-lombard.jpg",
     orgUrl: "https://www.icicilombard.com/",
     location: "Remote — Mumbai",
     roles: [

@@ -918,12 +918,6 @@ a:hover > .external-arrow {
   height: 100%;
   object-fit: contain;
 }
-.experience-logo-icici {
-  background: #ff5201;
-}
-.experience-logo-icici .experience-logo {
-  mix-blend-mode: multiply;
-}
 .experience-title {
   font-size: 13px;
   line-height: 1.5;
