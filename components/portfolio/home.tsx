@@ -171,14 +171,18 @@ export function PortfolioHome() {
                   </span>
                   <span className="experience-company">
                     {job.orgLogo && (
-                      <Image
-                        className="experience-logo"
-                        src={job.orgLogo}
-                        alt=""
-                        width={56}
-                        height={56}
-                        sizes="(max-width: 600px) 40px, 56px"
-                      />
+                      <span
+                        className={`experience-logo-tile${job.org === "ICICI Lombard" ? " experience-logo-icici" : ""}`}
+                      >
+                        <Image
+                          className="experience-logo"
+                          src={job.orgLogo}
+                          alt=""
+                          width={56}
+                          height={56}
+                          sizes="(max-width: 600px) 40px, 56px"
+                        />
+                      </span>
                     )}
                     <span>{job.org}</span>
                   </span>

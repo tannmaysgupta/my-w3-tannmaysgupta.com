@@ -904,11 +904,25 @@ a:hover > .external-arrow {
   letter-spacing: -0.04em;
   line-height: 1.2;
 }
-.experience-logo {
+.experience-logo-tile {
   width: 56px;
   height: 56px;
   flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.experience-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+.experience-logo-icici {
+  background: #ce96e3;
+}
+.experience-logo-icici .experience-logo {
+  mix-blend-mode: multiply;
 }
 .experience-title {
   font-size: 13px;
@@ -1930,7 +1944,7 @@ details[open] > summary .details-plus {
     font-size: 23px;
     gap: 10px;
   }
-  .experience-logo {
+  .experience-logo-tile {
     width: 40px;
     height: 40px;
   }
