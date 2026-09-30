@@ -4,7 +4,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const calLink = "tannmaysgupta/vaatun-product-sales";
+const calLink = "tannmaysgupta/connect";
 const namespace = "portfolio-conversation";
 
 export function BookingCalendar() {
@@ -37,8 +37,30 @@ export function BookingCalendar() {
         layout: "month_view",
         hideEventTypeDetails: false,
         cssVarsPerTheme: {
-          light: { "cal-brand": "#263e35" },
-          dark: { "cal-brand": "#acd0b9" },
+          light: {
+            "cal-brand": "#263e35",
+            "cal-brand-emphasis": "#1b3028",
+            "cal-brand-text": "#eff0e8",
+            "cal-brand-accent": "#eff0e8",
+            "cal-bg": "#eff0e8",
+            "cal-bg-subtle": "#e5e9df",
+            "cal-bg-muted": "#eff0e8",
+            "cal-bg-emphasis": "#d5dfd3",
+            "cal-text": "#263e35",
+            "cal-text-emphasis": "#263e35",
+            "cal-text-subtle": "#4f6257",
+            "cal-text-muted": "#59695e",
+            "cal-border": "#86998b",
+            "cal-border-emphasis": "#263e35",
+            "cal-border-subtle": "#c3cec0",
+            "cal-border-booker": "#c3cec0",
+          },
+          dark: {
+            "cal-brand": "#acd0b9",
+            "cal-brand-emphasis": "#c1dccb",
+            "cal-brand-text": "#263e35",
+            "cal-brand-accent": "#263e35",
+          },
         },
       });
     });
