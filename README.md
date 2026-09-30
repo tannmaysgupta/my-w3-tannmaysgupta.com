@@ -2,7 +2,7 @@
 
 Personal site for [Tannmay S Gupta](https://www.linkedin.com/in/tannmaysgupta/) — Co-Founder & CEO at [Vaatun](https://www.vaatun.com).
 
-Resume-led and deliberately simple: an impactful hero, a timeline, and a bento grid that links out to work already published elsewhere.
+A typographic, single-page portfolio inspired by the pacing and color fields of Dropbox's brand site. A randomly selected opening thought leads into six chapters: About, Experience, Work, Education, Writing, and Contact.
 
 ## Stack
 
@@ -10,8 +10,8 @@ Resume-led and deliberately simple: an impactful hero, a timeline, and a bento g
 |---|---|
 | Framework | Next.js 16 (App Router, RSC, typed routes) |
 | Runtime | React 19, TypeScript 5.9 |
-| Styling | Tailwind CSS v4 (CSS-first `@theme`), shadcn/ui, Aceternity |
-| Shader | `@paper-design/shaders-react` |
+| Styling | Tailwind CSS v4, custom editorial layouts in `portfolio.css` |
+| Motion | CSS entrance, hover, and scroll animations; no animation library |
 | Content | Typed TS in `lib/content/`, MDX essays via `next-mdx-remote/rsc` |
 | Tooling | Biome, lefthook, vitest, pnpm |
 
@@ -22,6 +22,7 @@ The site is **fully static** — no API routes, no database, no secrets, no serv
 ```bash
 pnpm dev      # http://localhost:3000
 pnpm build    # production build
+pnpm typecheck # generate Next.js route types and check TypeScript
 pnpm lint     # biome
 pnpm format   # biome --write
 pnpm test     # vitest
@@ -29,11 +30,13 @@ pnpm test     # vitest
 
 ## Notable decisions
 
-**No animation library.** Every scroll reveal, the timeline beam and the hero highlight are CSS scroll-driven animations (`animation-timeline: view()`). Dropping `motion` cut homepage JS from 247KB to 160KB gzipped. Where `animation-timeline` is unsupported, or the visitor prefers reduced motion, elements render in their final state — nothing is hidden behind an animation that might not run.
+**An opening thought, not a waiting room.** The full opening grid draws in, the navigation and supporting text appear, then the quotation types in character by character. The grid finishes in 1.3 seconds; typing begins at 1.9 seconds. Quotes stay on screen until the visitor scrolls or chooses another; there is no blocking loader or forced reading timer. Six sourced quotations live in `lib/content/opening-quotes.ts`. Selection happens after hydration, and optional session storage prevents immediate repeats. Screen readers receive the complete quotation, and reduced-motion preferences skip the animation.
 
-**One WebGL canvas, four fallbacks.** The hero mesh gradient ([shader-backdrop.tsx](components/hero/shader-backdrop.tsx)) is dynamically imported with `ssr: false`, mounts only when in viewport, freezes at `speed={0}` under reduced motion, and is skipped entirely on Save-Data, 2G, or without WebGL. A CSS gradient is always painted underneath, so every one of those paths still looks finished.
+**Six colors, one person.** Forest, plum, blue, purple, moss, and sage distinguish the chapters. A central ampersand connects product, design, and insurance without introducing a logo. The color atlas links to native page anchors; scrolling is never intercepted.
 
-**Two Aceternity components were rewritten.** `card-spotlight` pulled in three.js and react-three-fiber (~600KB) for a hover glow — replaced by [spotlight-card.tsx](components/ui/spotlight-card.tsx), which does the visible part with two CSS custom properties. `timeline` and `pointer-highlight` were rebuilt without `motion`, which also let them become server components and fixed a `<div>` nested inside an `<h1>`.
+**Progressive motion.** The homepage uses CSS geometry and typography, with no WebGL or animation runtime. Scroll animations enhance supporting browsers; reduced-motion preferences show the final composition immediately. Career disclosures use native `details`, and the index uses a native modal `dialog` for focus containment and Escape support.
+
+**Book in place.** Contact includes Cal.com's official React widget for `tannmaysgupta/vaatun-product-sales`. It loads as the visitor approaches the calendar, opens to current availability instead of a hardcoded month, and always offers a direct link as a fallback. The CSP permits the official embed script and frame domains. No booking data passes through this site's server.
 
 **No PII.** `/resume` and the printed PDF deliberately omit home address, date of birth and phone number. Those belong on a PDF handed to an employer, not on a public page that search engines index and cannot be made to forget.
 
@@ -41,10 +44,12 @@ pnpm test     # vitest
 
 ## Content
 
-Everything editable lives in two places:
+Content and presentation:
 
 - [lib/content/](lib/content/) — profile, experience, projects, education, certifications
 - [content/writing/](content/writing/) — MDX essays (frontmatter: `title`, `description`, `date`, `tags`, `draft`)
+- [components/portfolio/](components/portfolio/) — homepage composition, opening, and navigation
+- [portfolio.css](portfolio.css) — palette, layout, responsive rules, and motion
 
 Posts with `draft: true` are visible in development and hidden from production builds.
 

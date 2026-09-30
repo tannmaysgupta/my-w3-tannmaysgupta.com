@@ -28,7 +28,7 @@ export default async function WritingPostPage(props: PageProps<"/writing/[slug]"
   if (!post) notFound();
 
   return (
-    <article className="mx-auto w-full max-w-2xl px-5 py-16 sm:px-8 sm:py-24">
+    <article className="notebook-article mx-auto w-full max-w-2xl px-5 py-16 sm:px-8 sm:py-24">
       <Link
         href="/writing"
         className="text-sm text-muted-foreground underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-foreground"

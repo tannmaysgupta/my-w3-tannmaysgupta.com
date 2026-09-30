@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "../styles.css";
+import "../portfolio.css";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -13,10 +14,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fcfcfc" },
-    { media: "(prefers-color-scheme: dark)", color: "#2b3a3a" },
-  ],
+  themeColor: "#eff0e8",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,8 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-full flex-col">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          forcedTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <a

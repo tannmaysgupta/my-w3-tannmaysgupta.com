@@ -13,17 +13,33 @@ export default function WritingIndexPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
+    <div className="notebook-page mx-auto w-full max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
       <header className="mb-12">
-        <h1 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Writing</h1>
+        <Link href="/#writing" className="micro notebook-back">
+          ← Back to the story
+        </Link>
+        <h1>The notebook.</h1>
         <p className="mt-3 text-muted-foreground text-pretty">
           Notes on insurance, product and AI — mostly where the three overlap.
         </p>
       </header>
 
+      <a
+        className="notebook-published"
+        href="https://www.linkedin.com/posts/tannmaysgupta_activity-7348942803697049602-MPS5"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="micro">Published on LinkedIn / AI &amp; UX</span>
+        <h2>
+          Gen AI is tearing up the UX map. <span aria-hidden="true">↗</span>
+        </h2>
+        <p>What generative interfaces do to the maps designers have relied on.</p>
+      </a>
+
       {posts.length === 0 ? (
         <p className="text-muted-foreground">
-          Nothing published yet. There are drafts;{" "}
+          Longer essays are taking shape. In the meantime,{" "}
           <Link
             href="/#contact"
             className="underline decoration-accent decoration-2 underline-offset-4"
