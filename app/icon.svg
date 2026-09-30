@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tannmay S Gupta">
-  <title>Tannmay S Gupta</title>
-  <rect width="64" height="64" rx="14" fill="#2B3A3A"/>
-  <path d="M16 20h32v7H36.5v24h-9V27H16z" fill="#7FC8A9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TSG — Tannmay S Gupta">
+  <title>TSG — Tannmay S Gupta</title>
+  <rect width="64" height="64" rx="9" fill="#263E35"/>
+  <!-- Satoshi Black (900), converted to outlines for consistent rendering. -->
+  <g fill="#EFF0E8" transform="translate(3.417577 42.789392) scale(0.02912116 -0.02912116)">
+    <path transform="translate(0 0)" d="M20 590L230 590L230 0L392 0L392 590L602 590L602 740L20 740Z"/>
+    <path transform="translate(606 0)" d="M36 525C36 404 104 329 236 302L349 279C398 269 417 248 417 207C417 160 371 131 298 131C226 131 186 161 186 215L25 215C25 76 132 -13 297 -13C467 -13 579 80 579 223C579 340 516 403 384 430L273 453C221 464 198 486 198 531C198 580 240 610 306 610C367 610 406 578 406 526L567 526C567 666 467 754 308 754C149 754 36 659 36 525Z"/>
+    <path transform="translate(1199 0)" d="M410 600C487 600 555 566 574 488L744 488C727 648 591 752 414 752C185 752 36 591 36 368C36 141 181 -11 388 -11C476 -11 556 20 596 67L605 0L744 0L744 425L396 425L396 283L592 283C585 206 531 140 409 140C291 140 207 214 207 363C207 506 276 600 410 600Z"/>
+  </g>
 </svg>
